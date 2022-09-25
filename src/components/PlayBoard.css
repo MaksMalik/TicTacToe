@@ -11,7 +11,7 @@
   width: 100vw;
   text-align: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.301);
+  background-color: rgba(156, 133, 1, 0.842);
   padding: 50px 0 50px 0;
   font: bold 36px Open Sans;
   color: white;
@@ -28,6 +28,7 @@
 }
 
 .PlayBoard-button-newGame-button {
+  background-color: rgba(156, 133, 1, 0.89) !important;
   font-size: 20px !important;
   margin: 0 20px 0 20px !important;
 }
@@ -51,7 +52,7 @@
 .PlayBoard-tile {
   height: 150px;
   width: 150px;
-  background-color: rgba(255, 255, 255, 0.568);
+  background-color: rgba(156, 133, 1, 0.89);
   margin: 2px;
   transition-duration: 300ms;
   box-shadow: 0px 0px 2px black;
@@ -59,7 +60,7 @@
 }
 
 .PlayBoard-tile:hover {
-  background-color: rgba(255, 255, 255, 0.74);
+  background-color: rgba(168, 154, 74, 0.89);
   cursor: pointer;
   transition-duration: 300ms;
   box-shadow: 0px 0px 0px black;
@@ -68,42 +69,42 @@
 
 .PlayBoard-row:nth-child(1) .PlayBoard-tile:nth-child(1) {
   border-radius: 10% 0 0 0;
-  transition-delay: 300ms;
+  transition-delay: 600ms;
 }
 
 .PlayBoard-row:nth-child(1) .PlayBoard-tile:nth-child(2) {
-  transition-delay: 100ms;
+  transition-delay: 300ms;
 }
 
 .PlayBoard-row:nth-child(1) .PlayBoard-tile:nth-child(3) {
   border-radius: 0 10% 0 0;
-  transition-delay: 300ms;
+  transition-delay: 600ms;
 
 }
 
 .PlayBoard-row:nth-child(2) .PlayBoard-tile:nth-child(1) {
-  transition-delay: 600ms;
-}
-
-.PlayBoard-row:nth-child(2) .PlayBoard-tile:nth-child(2) {
   transition-delay: 900ms;
 }
 
+.PlayBoard-row:nth-child(2) .PlayBoard-tile:nth-child(2) {
+  transition-delay: 1200ms;
+}
+
 .PlayBoard-row:nth-child(2) .PlayBoard-tile:nth-child(3) {
-  transition-delay: 600ms;
+  transition-delay: 900ms;
 }
 
 .PlayBoard-row:nth-child(3) .PlayBoard-tile:nth-child(1) {
-  transition-delay: 300ms;
+  transition-delay: 600ms;
   border-radius: 0 0 0 10%;
 }
 
 .PlayBoard-row:nth-child(3) .PlayBoard-tile:nth-child(2) {
-  transition-delay: 100ms;
+  transition-delay: 300ms;
 }
 
 .PlayBoard-row:nth-child(3) .PlayBoard-tile:nth-child(3) {
-  transition-delay: 300ms;
+  transition-delay: 600ms;
   border-radius: 0 0 10% 0;
 }
 
@@ -120,6 +121,7 @@
   opacity: 0;
   filter: blur(5px);
   width: 0px;
+  transition-duration:  500ms;
 }
 
 .showPlayBoardTile {

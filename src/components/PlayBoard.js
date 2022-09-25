@@ -1,16 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./PlayBoard.css"
 import { Button } from '@mui/material';
 
 export default function PlayBoard() {
   
-// eslint-disable-next-line
   const [newGame, setNewGame] = useState()
+  // eslint-disable-next-line
+  const [tilesState, setTilesState] = useState()
+  // eslint-disable-next-line
+  const [buttonState, setButtonState] = useState()
+
+  
 
   const tiles = document.querySelectorAll("div.PlayBoard-tile")
   const button = document.querySelectorAll("div.PlayBoard-button-newGame")
 
+  useEffect(() => {
+    setTilesState(tiles)
+    setButtonState(button)
+// eslint-disable-next-line
+  }, [newGame]);
+
   const StartNewGame = () => {
+    console.log(tiles)
     setNewGame(true)
     tiles.forEach(element => element.classList.add("displayBlock"))
 
