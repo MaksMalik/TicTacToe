@@ -156,6 +156,8 @@
   height: 200px;
   width: 200px;
   color: rgba(255, 255, 255, 0.301);
+    transition-duration: 300ms;
+
 }
 
 .Circle::before {
@@ -170,6 +172,9 @@
   height: 200px;
   width: 200px;
   color: rgba(255, 255, 255, 0.301);
+    transition-duration: 300ms;
+
+
 }
 
 @media only screen and (max-width: 650px) {
