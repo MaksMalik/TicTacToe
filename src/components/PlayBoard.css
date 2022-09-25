@@ -13,8 +13,8 @@
   justify-content: center;
   background-color: rgba(156, 133, 1, 0.842);
   padding: 50px 0 50px 0;
-  font: bold 36px Open Sans;
-  color: white;
+  font: bold 100px Open Sans;
+  color: rgba(255, 255, 255, 0.356);
 }
 
 .PlayBoard-button-newGame {
@@ -50,13 +50,18 @@
 }
 
 .PlayBoard-tile {
-  height: 150px;
-  width: 150px;
+  height: 200px;
+  width: 200px;
   background-color: rgba(156, 133, 1, 0.89);
   margin: 2px;
   transition-duration: 300ms;
   box-shadow: 0px 0px 2px black;
   box-shadow: inset 0px 0px 0px rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
 }
 
 .PlayBoard-tile:hover {
@@ -127,7 +132,7 @@
 .showPlayBoardTile {
   opacity: 1;
   filter: blur(0);
-  width: 150px;
+  width: 200px;
 }
 
 .hiddenPlayBoardButton {
@@ -139,15 +144,89 @@
   transition-delay: 0ms !important;
 }
 
+.Cross::before {
+  content: "x";
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 200px Open Sans;
+  position: relative;
+  top: -20px;
+  height: 200px;
+  width: 200px;
+  color: rgba(255, 255, 255, 0.301);
+}
 
-@media only screen and (max-width: 500px) {
+.Circle::before {
+  content: "o";
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 200px Open Sans;
+  position: relative;
+  top: -20px;
+  height: 200px;
+  width: 200px;
+  color: rgba(255, 255, 255, 0.301);
+}
+
+@media only screen and (max-width: 650px) {
   .PlayBoard-tile {
     height: 30vw;
     width: 30vw;
-    margin: 2px;
   }
+  .PlayBoard-title {
+    font: bold 90px Open Sans;
+  }
+  .Cross::before {
+    content: "x";
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 30vw Open Sans;
+    height: 30vw;
+    width: 30vw;
+    color: rgba(255, 255, 255, 0.301);
+    top: -10px;
+  }
+  .Circle::before {
+    content: "o";
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 30vw Open Sans;
+    height: 30vw;
+    width: 30vw;
+    color: rgba(255, 255, 255, 0.301);
+    top: -10px;
+  }
+}
 
 
+@media only screen and (max-width: 500px) {
+  .PlayBoard-title {
+   font: bold 80px Open Sans;
+  }
+}
 
+@media only screen and (max-width: 450px) {
+  .PlayBoard-title {
+    font: bold 70px Open Sans;
+  }
+}
 
+@media only screen and (max-width: 400px) {
+  .PlayBoard-title {
+    font: bold 60px Open Sans;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .PlayBoard-title {
+    font: bold 50px Open Sans;
+  }
 }

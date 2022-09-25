@@ -52,8 +52,8 @@ export default function PlayBoard() {
       </div>
       <div className='PlayBoard-Game'>
         <div className='PlayBoard-row' >
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile'></div>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile'></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile Cross'></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile Circle'></div>
           <div className='PlayBoard-tile displayNone hiddenPlayBoardTile'></div>
         </div>
         <div className='PlayBoard-row'>
