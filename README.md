@@ -1,1 +1,2 @@
-oxoxo.netlify.app
+# Tic Tac Toe
+LIVE: https://oxoxo.netlify.app/
