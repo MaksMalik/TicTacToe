@@ -1,41 +1,48 @@
 import React, { useEffect, useState } from 'react'
 import "./PlayBoard.css"
-import { Button, getTouchRippleUtilityClass } from '@mui/material';
+import { Button } from '@mui/material';
 
 export default function PlayBoard() {
-  
+
   const [newGame, setNewGame] = useState()
   // eslint-disable-next-line
   const [tilesState, setTilesState] = useState(document.querySelectorAll("div.PlayBoard-tile"))
   // eslint-disable-next-line
   const [buttonState, setButtonState] = useState(document.querySelectorAll("div.PlayBoard-button-newGame"))
-  // eslint-disable-next-line
-  const [xwinning, setXwinning] = useState(0)
-    // eslint-disable-next-line
-  const [owinning, setOwinning] = useState(0)
-    // eslint-disable-next-line
-  const [isX, setIsX] = useState(getTouchRippleUtilityClass)
-      // eslint-disable-next-line
+
+  const [winners, setWinners] = useState([])
+  const [isX, setIsX] = useState(false)
   const [playArray, setPlayArray] = useState(Array(9).fill(null))
 
   const buttonNewGame = document.querySelectorAll("div.PlayBoard-winning")
 
-    // eslint-disable-next-line
-    const winningPatterns = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6]
-    ]
+  const winningPatterns = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ]
+
+  function winning() {
+    for (let i = 0; i < winningPatterns.length; i++) {
+      const [a, b, c] = winningPatterns[i]
+
+      if (playArray[a] && playArray[a] === playArray[b] && playArray[a] === playArray[c]) {
+        setWinners([...winners, playArray[a]]) || tilesState.forEach(element => element.classList.add("pointerNone")) || buttonNewGame.forEach(element => element.classList.remove("hiddenPlayBoardButtonRestart"))
+      }
+    }
+    return null
+  }
+
 
   useEffect(() => {
     setTilesState(document.querySelectorAll("div.PlayBoard-tile"))
     setButtonState(document.querySelectorAll("div.PlayBoard-button-newGame"))
-// eslint-disable-next-line
+  // eslint-disable-next-line
   }, [newGame]);
 
   const StartNewGame = () => {
@@ -56,26 +63,19 @@ export default function PlayBoard() {
     }, 0);
   }
 
-/*     playArray.filter((element) => (element === null)).length === 0  ? tilesState.forEach(element => element.classList.remove("Cross", "Circle")) : console.log("dasdas")
- */
-
   function handleClick(event) {
     playArray[event.target.id] === null ? ((playArray[event.target.id] = isX ? 'X' : "O") && setIsX(!isX)) : window.alert("This tile is already taken")
     !event.target.classList.contains('Cross', 'Circle') && event.target.classList.add(isX ? "Cross" : "Circle")
-    console.log(playArray)
     playArray.filter((element) => (element === null)).length === 0 && tilesState.forEach(element => element.classList.add("pointerNone"))
     playArray.filter((element) => (element === null)).length === 0 && buttonNewGame.forEach(element => element.classList.remove("hiddenPlayBoardButtonRestart"))
-
+    winning()
   }
 
   function handleNewGame(event) {
-    playArray.filter((element) => (element === null)).length === 0 && tilesState.forEach(element => element.classList.remove("pointerNone", "Circle", "Cross"))
-    playArray.filter((element) => (element === null)).length === 0 && setPlayArray(Array(9).fill(null))
+    tilesState.forEach(element => element.classList.remove("pointerNone", "Circle", "Cross"))
+    setPlayArray(Array(9).fill(null))
     buttonNewGame.forEach(element => element.classList.add("hiddenPlayBoardButtonRestart"))
   }
-
-
-
 
   return (
     <div className='PlayBoard'>
@@ -83,8 +83,8 @@ export default function PlayBoard() {
         Tic Tac Toe
       </div>
       <div className='PlayBoard-ScoreBoard'>
-        <div>x: {xwinning}</div>
-        <div>o: {owinning}</div>
+        <div>x: {winners.filter(element => element === "X").length}</div>
+        <div>o: {winners.filter(element => element === "O").length}</div>
 
       </div>
       <div className='PlayBoard-button-newGame'>
