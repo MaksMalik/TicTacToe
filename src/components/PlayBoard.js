@@ -5,9 +5,7 @@ import { Button } from '@mui/material';
 export default function PlayBoard() {
 
   const [newGame, setNewGame] = useState()
-  // eslint-disable-next-line
   const [tilesState, setTilesState] = useState(document.querySelectorAll("div.PlayBoard-tile"))
-  // eslint-disable-next-line
   const [buttonState, setButtonState] = useState(document.querySelectorAll("div.PlayBoard-button-newGame"))
 
   const [winners, setWinners] = useState([])
@@ -15,6 +13,8 @@ export default function PlayBoard() {
   const [playArray, setPlayArray] = useState(Array(9).fill(null))
 
   const buttonNewGame = document.querySelectorAll("div.PlayBoard-winning")
+
+  const scoreBoard = document.querySelectorAll("div.PlayBoard-ScoreBoard")
 
   const winningPatterns = [
     [0, 1, 2],
@@ -42,7 +42,6 @@ export default function PlayBoard() {
   useEffect(() => {
     setTilesState(document.querySelectorAll("div.PlayBoard-tile"))
     setButtonState(document.querySelectorAll("div.PlayBoard-button-newGame"))
-  // eslint-disable-next-line
   }, [newGame]);
 
   const StartNewGame = () => {
@@ -61,7 +60,12 @@ export default function PlayBoard() {
     setTimeout(function () {
       buttonState.forEach(element => element.classList.add("hiddenPlayBoardButton"))
     }, 0);
+
+    setTimeout(function () {
+      scoreBoard.forEach(element => element.classList.add("showScoreBoard"))
+    }, 0);
   }
+
 
   function handleClick(event) {
     playArray[event.target.id] === null ? ((playArray[event.target.id] = isX ? 'X' : "O") && setIsX(!isX)) : window.alert("This tile is already taken")
@@ -87,7 +91,7 @@ export default function PlayBoard() {
         <div>o: {winners.filter(element => element === "O").length}</div>
 
       </div>
-      <div className='PlayBoard-button-newGame'>
+      <div className='PlayBoard-button-newGame '>
         <Button  className='PlayBoard-button-newGame-button' variant='contained' onClick={StartNewGame}>START NEW GAME</Button>
       </div>
       <div className='PlayBoard-Game'>

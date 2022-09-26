@@ -7,13 +7,12 @@
 
 .PlayBoard-title {
   display: flex;
-  font-size: 40px;
   width: 100vw;
   text-align: center;
   justify-content: center;
   background-color: #8f7c14;
   padding: 10px 0 10px 0;
-  font: bold 100px Open Sans;
+  font: bold 90px Open Sans;
   color: rgba(255, 255, 255, 0.356);
   box-shadow: 0 0 5px 1px rgba(0,0,0,0.75);
 
@@ -23,10 +22,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-duration: 300ms;
+  transition-delay: 1500ms;
+  opacity: 0;
+  transform: translateY(-100%);
+  filter: blur(5px);
+  z-index: -1;
+
+
 }
 
 .PlayBoard-ScoreBoard div {
-  margin: 0 1px 10px 1px;
+  margin: 0 1px 0px 1px;
   color: rgba(0, 0, 0, 0.445);
   font: bold 50px Open Sans;
   display: flex;
@@ -59,8 +66,7 @@
 .PlayBoard-button-newGame-button {
   background-color: rgba(156, 133, 1, 0.89) !important;
   font-size: 20px !important;
-  margin: 0 20px 0 20px !important;
-  padding: 50px !important;
+  padding: 20px !important;
   border-radius: 20px !important;
   color: rgba(255, 255, 255, 0.356) !important;
 }
@@ -82,8 +88,7 @@
 }
 
 .PlayBoard-tile {
-  height: 200px;
-  width: 200px;
+  height: 180px;
   background-color: rgba(156, 133, 1, 0.89);
   margin: 2px;
   transition-duration: 300ms;
@@ -166,7 +171,7 @@
 .showPlayBoardTile {
   opacity: 1;
   filter: blur(0);
-  width: 200px;
+  width: 180px;
 }
 
 .hiddenPlayBoardButton {
@@ -193,13 +198,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font: bold 200px Open Sans;
+  font: bold 120px Open Sans;
   position: relative;
-  top: -20px;
-  height: 200px;
-  width: 200px;
+  top: -10px;
+  height: 180px;
+  width: 180px;
   color: rgba(255, 255, 255, 0.301);
   transition-duration: 300ms;
+  
 }
 
 .Circle::before {
@@ -208,15 +214,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font: bold 200px Open Sans;
+  font: bold 120px Open Sans;
   position: relative;
-  top: -20px;
-  height: 200px;
-  width: 200px;
+  top: -10px;
+  height: 180px;
+  width: 180px;
   color: rgba(255, 255, 255, 0.301);
-    transition-duration: 300ms;
-
-
+  transition-duration: 300ms;
 }
 
 @media only screen and (max-width: 650px) {
@@ -228,28 +232,14 @@
     font: bold 90px Open Sans;
   }
   .Cross::before {
-    content: "x";
-    display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font: bold 30vw Open Sans;
+    font: bold 100px Open Sans;
     height: 30vw;
     width: 30vw;
-    color: rgba(255, 255, 255, 0.301);
-    top: -10px;
   }
   .Circle::before {
-    content: "o";
-    display: block;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font: bold 30vw Open Sans;
+    font: bold 100px Open Sans;
     height: 30vw;
     width: 30vw;
-    color: rgba(255, 255, 255, 0.301);
-    top: -10px;
   }
 }
 
@@ -278,10 +268,26 @@
   .PlayBoard-title {
     font: bold 70px Open Sans;
   }
+
+  .Cross::before {
+    font: bold 80px Open Sans;
+  }
+
+  .Circle::before {
+    font: bold 80px Open Sans;
+  }
 }
 
 @media only screen and (max-width: 400px) {
   .PlayBoard-title {
+    font: bold 60px Open Sans;
+  }
+
+  .Cross::before {
+    font: bold 60px Open Sans;
+  }
+
+  .Circle::before {
     font: bold 60px Open Sans;
   }
 
@@ -327,4 +333,12 @@
 
 .pointerNone {
   pointer-events:none;
+}
+
+
+.showScoreBoard {
+  transition-duration: 500ms;
+    opacity: 1;
+  transform: translateY(0);
+    filter: blur(0);
 }
