@@ -203,9 +203,18 @@
   top: -10px;
   height: 180px;
   width: 180px;
-  color: rgba(255, 255, 255, 0.301);
-  transition-duration: 300ms;
-  
+}
+
+.Cross {
+  pointer-events:none;
+    color: rgba(0, 0, 0, 0.301);
+}
+
+.Circle {
+  pointer-events:none;
+    color: rgba(255, 255, 255, 0.301);
+
+
 }
 
 .Circle::before {
@@ -219,8 +228,6 @@
   top: -10px;
   height: 180px;
   width: 180px;
-  color: rgba(255, 255, 255, 0.301);
-  transition-duration: 300ms;
 }
 
 @media only screen and (max-width: 650px) {
