@@ -11,10 +11,39 @@
   width: 100vw;
   text-align: center;
   justify-content: center;
-  background-color: rgba(156, 133, 1, 0.842);
-  padding: 50px 0 50px 0;
+  background-color: #8f7c14;
+  padding: 10px 0 10px 0;
   font: bold 100px Open Sans;
   color: rgba(255, 255, 255, 0.356);
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.75);
+
+}
+
+.PlayBoard-ScoreBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PlayBoard-ScoreBoard div {
+  margin: 0 1px 10px 1px;
+  color: rgba(0, 0, 0, 0.445);
+  font: bold 50px Open Sans;
+  display: flex;
+  background-color: #8f7c14;
+  height: 100px;
+  width: 200px;
+  border-bottom-left-radius: 00px;
+  border-bottom-right-radius: 400px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px 1px rgba(0,0,0,0.75);
+  clip-path: inset(0px -1px -5px 0px);
+}
+
+.PlayBoard-ScoreBoard div:nth-child(1) {
+  border-bottom-left-radius: 400px;
+  border-bottom-right-radius: 0px;
 }
 
 .PlayBoard-button-newGame {
@@ -31,6 +60,9 @@
   background-color: rgba(156, 133, 1, 0.89) !important;
   font-size: 20px !important;
   margin: 0 20px 0 20px !important;
+  padding: 50px !important;
+  border-radius: 20px !important;
+  color: rgba(255, 255, 255, 0.356) !important;
 }
 
 
@@ -40,7 +72,7 @@
   align-items: center;
   flex-direction: column;
   position: relative;
-  margin-top: 10vh;
+  margin-top: 0vh;
 }
 
 .PlayBoard-row {
@@ -62,13 +94,15 @@
   justify-content: center;
   align-content: center;
   justify-items: center;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.75);
+
 }
 
 .PlayBoard-tile:hover {
   background-color: rgba(168, 154, 74, 0.89);
   cursor: pointer;
   transition-duration: 300ms;
-  box-shadow: 0px 0px 0px black;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.75);
   box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.493);
 }
 
@@ -140,6 +174,15 @@
   transition-duration: 500ms;
 }
 
+.hiddenPlayBoardButtonRestart {
+  opacity: 0;
+  filter: blur(5px);
+  transition-duration: 500ms;
+  position: relative;
+  bottom: 150px;
+  z-index: -1;
+}
+
 .transitionDelayZero {
   transition-delay: 0ms !important;
 }
@@ -156,8 +199,7 @@
   height: 200px;
   width: 200px;
   color: rgba(255, 255, 255, 0.301);
-    transition-duration: 300ms;
-
+  transition-duration: 300ms;
 }
 
 .Circle::before {
@@ -214,7 +256,21 @@
 
 @media only screen and (max-width: 500px) {
   .PlayBoard-title {
-   font: bold 80px Open Sans;
+    font: bold 80px Open Sans;
+  }
+
+  .PlayBoard-button-newGame-button {
+    padding: 20px !important;
+  }
+
+  .PlayBoard-ScoreBoard div {
+    font: bold 40px Open Sans;
+    display: flex;
+    background-color: #8f7c14;
+    height: 80px;
+    width: 160px;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -228,10 +284,47 @@
   .PlayBoard-title {
     font: bold 60px Open Sans;
   }
+
+  .PlayBoard-ScoreBoard div {
+    font: bold 30px Open Sans;
+    display: flex;
+    background-color: #8f7c14;
+    height: 60px;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media only screen and (max-width: 350px) {
   .PlayBoard-title {
     font: bold 50px Open Sans;
   }
+}
+
+
+.PlayBoard-winning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 500ms;
+  margin-top: 20px;
+    bottom: 0;
+
+}
+
+.PlayBoard-winning-button {
+  background-color: rgba(156, 133, 1, 0.89) !important;
+  font-size: 20px !important;
+  padding: 10px 20px 10px 20px !important;
+  border-radius: 20px !important;
+  color: rgba(255, 255, 255, 0.356) !important;
+
+
+}
+
+
+.pointerNone {
+  pointer-events:none;
 }
