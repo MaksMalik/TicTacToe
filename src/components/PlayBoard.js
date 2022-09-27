@@ -33,6 +33,10 @@ export default function PlayBoard() {
 
       if (playArray[a] && playArray[a] === playArray[b] && playArray[a] === playArray[c]) {
         setWinners([...winners, playArray[a]]) || tilesState.forEach(element => element.classList.add("pointerNone")) || buttonNewGame.forEach(element => element.classList.remove("hiddenPlayBoardButtonRestart"))
+        tilesState[a].classList.add("winnerTile")
+        tilesState[b].classList.add("winnerTile")
+        tilesState[c].classList.add("winnerTile")
+
       }
     }
     return null
@@ -79,6 +83,8 @@ export default function PlayBoard() {
     tilesState.forEach(element => element.classList.remove("pointerNone", "Circle", "Cross"))
     setPlayArray(Array(9).fill(null))
     buttonNewGame.forEach(element => element.classList.add("hiddenPlayBoardButtonRestart"))
+    tilesState.forEach(element => element.classList.remove("winnerTile"))
+
   }
 
   return (
@@ -87,8 +93,8 @@ export default function PlayBoard() {
         Tic Tac Toe
       </div>
       <div className='PlayBoard-ScoreBoard'>
-        <div>x: {winners.filter(element => element === "X").length}</div>
-        <div>o: {winners.filter(element => element === "O").length}</div>
+        <div className='xWinner'>x: {winners.filter(element => element === "X").length}</div>
+        <div className='oWinner'>o: {winners.filter(element => element === "O").length}</div>
 
       </div>
       <div className='PlayBoard-button-newGame '>

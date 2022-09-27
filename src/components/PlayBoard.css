@@ -28,8 +28,6 @@
   transform: translateY(-100%);
   filter: blur(5px);
   z-index: -1;
-
-
 }
 
 .PlayBoard-ScoreBoard div {
@@ -349,3 +347,18 @@
   transform: translateY(0);
     filter: blur(0);
 }
+
+.winnerTile {
+  color: rgba(151, 28, 28, 0.623);
+  transition-delay: 1000ms;
+  box-shadow: 0 0 5px  red;
+}
+
+/* .xWinner {
+  color: rgba(255, 255, 255, 0.301) !important;
+}
+
+.oWinner {
+  color: rgba(0, 0, 0, 0.301) !important;
+}
+ */
