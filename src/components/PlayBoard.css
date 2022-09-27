@@ -46,7 +46,6 @@
   justify-content: center;
   align-items: center;
   text-shadow: 2px 2px rgba(255, 255, 255, 0.185);
-  border-right: 1px solid black;
 }
 
 .PlayBoard-ScoreBoard div:nth-child(1) {
