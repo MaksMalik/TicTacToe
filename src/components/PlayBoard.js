@@ -54,7 +54,7 @@ export default function PlayBoard() {
 
     setTimeout(function () {
       tilesState.forEach(element => element.classList.add("showPlayBoardTile"))
-    }, 1); 
+    }, 1);
 
     setTimeout(function () {
       tilesState.forEach(element => element.classList.add("transitionDelayZero"))
@@ -72,7 +72,7 @@ export default function PlayBoard() {
 
 
   function handleClick(event) {
-    playArray[event.target.id] === null && ((playArray[event.target.id] = isX ? 'X' : "O") && setIsX(!isX)) 
+    playArray[event.target.id] === null && ((playArray[event.target.id] = isX ? 'X' : "O") && setIsX(!isX))
     tilesState.forEach((element => element.classList.contains("O") ? (element.classList.remove("O") || element.classList.add("X")) : (element.classList.remove("X") || element.classList.add("O"))))
     !event.target.classList.contains('Cross', 'Circle') && event.target.classList.add(isX ? "Cross" : "Circle")
     playArray.filter((element) => (element === null)).length === 0 && tilesState.forEach(element => element.classList.add("pointerNone"))
@@ -99,7 +99,10 @@ export default function PlayBoard() {
 
       </div>
       <div className='PlayBoard-button-newGame '>
-        <Button  className='PlayBoard-button-newGame-button' variant='contained' onClick={StartNewGame}>START NEW GAME</Button>
+        <Button className='PlayBoard-button-newGame-button' variant='contained' onClick={StartNewGame}>START NEW GAME</Button>
+      </div>
+      <div className='PlayBoard-winning hiddenPlayBoardButtonRestart'>
+        <Button className="PlayBoard-winning-button " variant="contained" onClick={handleNewGame}>Start new game</Button>
       </div>
       <div className='PlayBoard-Game'>
         <div className='PlayBoard-row' >
@@ -119,9 +122,6 @@ export default function PlayBoard() {
         </div>
       </div>
 
-      <div className='PlayBoard-winning hiddenPlayBoardButtonRestart'>
-        <Button className="PlayBoard-winning-button " variant="contained" onClick={handleNewGame}>Start new game</Button>
-      </div>
 
     </div>
   )

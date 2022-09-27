@@ -1,5 +1,5 @@
 .PlayBoard {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -11,7 +11,7 @@
   text-align: center;
   justify-content: center;
   background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);  
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
   padding: 10px 0 10px 0;
   font: bold 90px Open Sans;
   color: #07281b;
@@ -29,14 +29,15 @@
   transform: translateY(-100%);
   filter: blur(5px);
   z-index: -1;
-  background-color: rgba(0, 0, 0, 0.301);
-  margin: 20px 1px 0px 1px;
-  border-radius: 20px 20px 20px 20px;
+  background-color: #95742C;
   top: -4px;
+  border-radius: 0 0 50% 50%;
+  padding: 0 0 20px 0;
+
+
 }
 
 .PlayBoard-ScoreBoard div {
-  margin: 0px  1px 0px 1px;
   color: #07281b;
   font: bold 55px Open Sans;
   display: flex;
@@ -44,18 +45,7 @@
   width: 180px;
   justify-content: center;
   align-items: center;
-  border-radius: 0 20px 20px 0;
-  box-shadow: 0 0 2px 1px #0d422d;
-  text-shadow: 1px 1px #0d422d, -1px -1px #0d422d ;
-  margin: 4px;
-
-}
-
-.PlayBoard-ScoreBoard div:nth-child(1) {
-  border-radius: 20px 0px 0 20px;
-  box-shadow: 0 0 2px 1px #0d422d;
-
-
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.185);
 }
 
 .PlayBoard-button-newGame {
@@ -63,35 +53,34 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 30vh;
+  top: 20vh;
   transform: translateX(0px);
   transition-duration: 500ms;
   box-shadow: 0 0 2px 1px #07281b;
   border-radius: 20px !important;
 }
 
-
-
 .PlayBoard-button-newGame-button {
   background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important;  
-  font: bold 20px Open Sans !important;
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important;
+  font: bold 30px Open Sans !important;
   padding: 20px !important;
   border-radius: 20px !important;
   color: #07281b !important;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.226) !important;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.979) !important;
+
 }
 
-
 .PlayBoard-Game {
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   position: relative;
   margin-top: 0vh;
   background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-              radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);  
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
   border-radius: 20px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
 
@@ -105,7 +94,6 @@
 
 .PlayBoard-tile {
   height: 180px;
-
   border: #07281b 1px solid;
 }
 
@@ -113,14 +101,13 @@
   background-color: rgba(255, 255, 255, 0.185);
   cursor: pointer;
   transition-duration: 300ms;
-  box-shadow: 0 0 2px 1px rgba(0,0,0,0.75);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.75);
   box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.493);
 }
 
 .PlayBoard-row:nth-child(1) .PlayBoard-tile:nth-child(1) {
   border-radius: 10% 0 0 0;
 }
-
 
 .PlayBoard-row:nth-child(1) .PlayBoard-tile:nth-child(3) {
   border-radius: 0 10% 0 0;
@@ -133,7 +120,6 @@
 .PlayBoard-row:nth-child(3) .PlayBoard-tile:nth-child(3) {
   border-radius: 0 0 10% 0;
 }
-
 
 .displayNone {
   display: none;
@@ -190,12 +176,12 @@
   width: 180px;
 }
 
-.Cross, .Circle {
-  pointer-events:none;
-    color: #07281b;
-    text-shadow: 1px 1px rgba(255, 255, 255, 0.274);
+.Cross,
+.Circle {
+  pointer-events: none;
+  color: #07281b;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.274);
 }
-
 
 
 .Circle::before {
@@ -212,7 +198,7 @@
 }
 
 @media (hover: hover) {
-  div.X:hover::before  {
+  div.X:hover::before {
     content: "x";
     display: block;
     display: flex;
@@ -226,7 +212,7 @@
     top: -10px;
   }
 
-  div.O:hover::before  {
+  div.O:hover::before {
     content: "o";
     display: block;
     display: flex;
@@ -241,8 +227,6 @@
   }
 }
 
-
-
 @media only screen and (max-width: 650px) {
   .PlayBoard-tile {
     height: 0vw;
@@ -250,34 +234,37 @@
   }
 
   .showPlayBoardTile {
-  opacity: 1;
-  filter: blur(0);
+    opacity: 1;
+    filter: blur(0);
     height: 30vw;
     width: 30vw;
-  transition-delay: 200ms;
-  transition-duration: 1500ms;
-}
+    transition-delay: 200ms;
+    transition-duration: 1500ms;
+  }
+
   .PlayBoard-title {
     font: bold 90px Open Sans;
   }
+
   .Cross::before {
     font: bold 100px Open Sans;
     height: 30vw;
     width: 30vw;
   }
+
   .Circle::before {
     font: bold 100px Open Sans;
     height: 30vw;
     width: 30vw;
   }
 
-  div.X:hover::before  {
+  div.X:hover::before {
     font: bold 100px Open Sans;
     height: 30vw;
     width: 30vw;
   }
 
-  div.O:hover::before  {
+  div.O:hover::before {
     font: bold 100px Open Sans;
     height: 30vw;
     width: 30vw;
@@ -312,15 +299,15 @@
     font: bold 80px Open Sans;
   }
 
-    .PlayBoard-Game {
+  .PlayBoard-Game {
     border-radius: 15px;
   }
 
-    div.X:hover::before  {
+  div.X:hover::before {
     font: bold 80px Open Sans;
   }
 
-  div.O:hover::before  {
+  div.O:hover::before {
     font: bold 80px Open Sans;
   }
 }
@@ -344,15 +331,13 @@
     width: 120px;
   }
 
-  div.X:hover::before  {
-    font: bold 60px Open Sans;
-
-  }
-
-  div.O:hover::before  {
+  div.X:hover::before {
     font: bold 60px Open Sans;
   }
 
+  div.O:hover::before {
+    font: bold 60px Open Sans;
+  }
 }
 
 @media only screen and (max-width: 350px) {
@@ -368,22 +353,24 @@
   justify-content: center;
   align-items: center;
   transition-duration: 500ms;
-  margin-top: 20px;
-    bottom: 0;
+  margin-top: 0px;
+  position: relative;
+  top: -35px;
 }
 
 .PlayBoard-winning-button {
-    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important;  
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important;
   font: bold 20px Open Sans !important;
-  padding: 20px !important;
+  padding: 10px 20px !important;
   border-radius: 20px !important;
   color: #07281b !important;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.226) !important;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.979) !important;
 }
 
 .pointerNone {
-  pointer-events:none;
+  pointer-events: none;
 }
 
 .showScoreBoard {
@@ -396,7 +383,6 @@
 .winnerTile {
   color: rgba(112, 0, 0, 0.623);
   transition-delay: 1000ms;
-  box-shadow: 0 0 2px 1px  rgb(112, 0, 0);
+  box-shadow: 0 0 2px 1px rgb(112, 0, 0);
   border: rgb(112, 0, 0) 1px solid;
-
 }
