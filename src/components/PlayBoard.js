@@ -72,7 +72,8 @@ export default function PlayBoard() {
 
 
   function handleClick(event) {
-    playArray[event.target.id] === null ? ((playArray[event.target.id] = isX ? 'X' : "O") && setIsX(!isX)) : window.alert("This tile is already taken")
+    playArray[event.target.id] === null && ((playArray[event.target.id] = isX ? 'X' : "O") && setIsX(!isX)) 
+    tilesState.forEach((element => element.classList.contains("O") ? (element.classList.remove("O") || element.classList.add("X")) : (element.classList.remove("X") || element.classList.add("O"))))
     !event.target.classList.contains('Cross', 'Circle') && event.target.classList.add(isX ? "Cross" : "Circle")
     playArray.filter((element) => (element === null)).length === 0 && tilesState.forEach(element => element.classList.add("pointerNone"))
     playArray.filter((element) => (element === null)).length === 0 && buttonNewGame.forEach(element => element.classList.remove("hiddenPlayBoardButtonRestart"))
@@ -102,19 +103,19 @@ export default function PlayBoard() {
       </div>
       <div className='PlayBoard-Game'>
         <div className='PlayBoard-row' >
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="0" value={playArray[0]} onClick={handleClick}></div>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="1" value={playArray[1]} onClick={handleClick}></div>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="2" value={playArray[2]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="0" value={playArray[0]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="1" value={playArray[1]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="2" value={playArray[2]} onClick={handleClick}></div>
         </div>
         <div className='PlayBoard-row'>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="3" value={playArray[3]} onClick={handleClick}></div>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="4" value={playArray[4]} onClick={handleClick}></div>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="5" value={playArray[5]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="3" value={playArray[3]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="4" value={playArray[4]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="5" value={playArray[5]} onClick={handleClick}></div>
         </div>
         <div className='PlayBoard-row'>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="6" value={playArray[6]} onClick={handleClick}></div>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="7" value={playArray[7]} onClick={handleClick}></div>
-          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile' id="8" value={playArray[8]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="6" value={playArray[6]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="7" value={playArray[7]} onClick={handleClick}></div>
+          <div className='PlayBoard-tile displayNone hiddenPlayBoardTile O' id="8" value={playArray[8]} onClick={handleClick}></div>
         </div>
       </div>
 

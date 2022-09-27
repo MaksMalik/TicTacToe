@@ -15,7 +15,8 @@
   padding: 10px 0 10px 0;
   font: bold 90px Open Sans;
   color: #07281b;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
+  text-shadow: 2px 2px rgba(255, 255, 255, 0.185);
 
 }
 
@@ -29,23 +30,24 @@
   transform: translateY(-100%);
   filter: blur(5px);
   z-index: -1;
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);  
-    margin: 20px  1px 0px 1px;
+  background-color: rgba(0, 0, 0, 0.219);
+  margin: 0 1px 0px 1px;
   color: #07281b;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
+  text-shadow: 1px 1px rgb(0, 0, 0);
+
 }
 
 .PlayBoard-ScoreBoard div {
   margin: 0px  1px 0px 1px;
-  color: #07281b;
-  font: bold 50px Open Sans;
+  color: rgb(110, 98, 26);
+  font: bold 55px Open Sans;
   display: flex;
   height: 100px;
-  width: 200px;
+  width: 180px;
   justify-content: center;
   align-items: center;
-  border-radius: 0 19px 19px 0;
+  border-radius: 0 0px 9px 0;
   box-shadow: 0 0 2px 1px #07281b;
   margin: 2px;
 
@@ -53,7 +55,7 @@
 }
 
 .PlayBoard-ScoreBoard div:nth-child(1) {
-  border-radius: 19px 0 0 19px;
+  border-radius: 0px 0 0 19px;
   box-shadow: 0 0 2px 1px #07281b;
 
 
@@ -80,7 +82,7 @@
   padding: 20px !important;
   border-radius: 20px !important;
   color: #07281b !important;
-
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.226) !important;
 }
 
 
@@ -92,8 +94,10 @@
   position: relative;
   margin-top: 0vh;
   background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
-                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);  
-    border-radius: 20px;
+              radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);  
+  border-radius: 20px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
+
 }
 
 .PlayBoard-row {
@@ -104,14 +108,12 @@
 
 .PlayBoard-tile {
   height: 180px;
-  margin: 2px;
-  transition-duration: 300ms;
-  box-shadow: inset 0px 0px 0px rgb(0, 0, 0);
-  box-shadow: 0 0 2px 1px #07281b;
+
+  border: #07281b 1px solid;
 }
 
 .PlayBoard-tile:hover {
-  background-color: rgba(255, 255, 255, 0.219);
+  background-color: rgba(255, 255, 255, 0.185);
   cursor: pointer;
   transition-duration: 300ms;
   box-shadow: 0 0 2px 1px rgba(0,0,0,0.75);
@@ -148,13 +150,16 @@
   opacity: 0;
   filter: blur(5px);
   width: 0px;
-  transition-duration:  500ms;
+  height: 0px;
 }
 
 .showPlayBoardTile {
   opacity: 1;
   filter: blur(0);
   width: 180px;
+  height: 180px;
+  transition-delay: 200ms;
+  transition-duration: 1500ms;
 }
 
 .hiddenPlayBoardButton {
@@ -191,6 +196,7 @@
 .Cross, .Circle {
   pointer-events:none;
     color: #07281b;
+    text-shadow: 1px 1px rgba(255, 255, 255, 0.274);
 }
 
 
@@ -208,11 +214,51 @@
   width: 180px;
 }
 
+div.X:hover::before  {
+    content: "x";
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 120px Open Sans;
+  position: relative;
+  color: rgba(0, 0, 0, 0.123);
+  height: 180px;
+  width: 180px;
+  top: -10px;
+}
+
+div.O:hover::before  {
+    content: "o";
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: bold 120px Open Sans;
+  position: relative;
+  color: rgba(0, 0, 0, 0.123);
+  height: 180px;
+  width: 180px;
+  top: -10px;
+}
+
+
+
+
 @media only screen and (max-width: 650px) {
   .PlayBoard-tile {
+    height: 0vw;
+    width: 0vw;
+  }
+
+  .showPlayBoardTile {
+  opacity: 1;
+  filter: blur(0);
     height: 30vw;
     width: 30vw;
-  }
+  transition-delay: 200ms;
+  transition-duration: 1500ms;
+}
   .PlayBoard-title {
     font: bold 90px Open Sans;
   }
@@ -222,6 +268,18 @@
     width: 30vw;
   }
   .Circle::before {
+    font: bold 100px Open Sans;
+    height: 30vw;
+    width: 30vw;
+  }
+
+  div.X:hover::before  {
+    font: bold 100px Open Sans;
+    height: 30vw;
+    width: 30vw;
+  }
+
+  div.O:hover::before  {
     font: bold 100px Open Sans;
     height: 30vw;
     width: 30vw;
@@ -259,6 +317,14 @@
     .PlayBoard-Game {
     border-radius: 15px;
   }
+
+    div.X:hover::before  {
+    font: bold 80px Open Sans;
+  }
+
+  div.O:hover::before  {
+    font: bold 80px Open Sans;
+  }
 }
 
 @media only screen and (max-width: 400px) {
@@ -279,7 +345,16 @@
     height: 60px;
     width: 120px;
   }
-  
+
+  div.X:hover::before  {
+    font: bold 60px Open Sans;
+
+  }
+
+  div.O:hover::before  {
+    font: bold 60px Open Sans;
+  }
+
 }
 
 @media only screen and (max-width: 350px) {
@@ -306,6 +381,7 @@
   padding: 20px !important;
   border-radius: 20px !important;
   color: #07281b !important;
+  text-shadow: 1px 1px rgba(255, 255, 255, 0.226) !important;
 }
 
 .pointerNone {
@@ -320,7 +396,9 @@
 }
 
 .winnerTile {
-  color: rgba(151, 28, 28, 0.623);
+  color: rgba(112, 0, 0, 0.623);
   transition-delay: 1000ms;
-  box-shadow: 0 0 2px 1px  rgba(151, 28, 28, 0.623);
+  box-shadow: 0 0 2px 1px  rgb(112, 0, 0);
+  border: rgb(112, 0, 0) 1px solid;
+
 }
