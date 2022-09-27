@@ -10,7 +10,8 @@
   width: 100vw;
   text-align: center;
   justify-content: center;
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+  background:
+    radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
   padding: 10px 0 10px 0;
   font: bold 90px Open Sans;
@@ -33,20 +34,29 @@
   top: -4px;
   border-radius: 0 0 50% 50%;
   padding: 0 0 20px 0;
-
-
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
 }
 
 .PlayBoard-ScoreBoard div {
   color: #07281b;
-  font: bold 55px Open Sans;
+  font: bold 45px Open Sans;
   display: flex;
   height: 100px;
   width: 180px;
   justify-content: center;
   align-items: center;
   text-shadow: 2px 2px rgba(255, 255, 255, 0.185);
+  border-right: 1px solid black;
 }
+
+.PlayBoard-ScoreBoard div:nth-child(1) {
+  border-right: 1px solid #07281b;
+}
+
+.PlayBoard-ScoreBoard div:nth-child(2) {
+  border-left: 1px solid #07281b;
+}
+
 
 .PlayBoard-button-newGame {
   display: flex;
@@ -61,7 +71,8 @@
 }
 
 .PlayBoard-button-newGame-button {
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+  background:
+    radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important;
   font: bold 30px Open Sans !important;
   padding: 20px !important;
@@ -79,7 +90,8 @@
   flex-direction: column;
   position: relative;
   margin-top: 0vh;
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+  background:
+    radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
   border-radius: 20px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
@@ -359,7 +371,8 @@
 }
 
 .PlayBoard-winning-button {
-  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+  background:
+    radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
     radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important;
   font: bold 20px Open Sans !important;
   padding: 10px 20px !important;
