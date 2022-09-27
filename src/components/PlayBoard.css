@@ -10,11 +10,12 @@
   width: 100vw;
   text-align: center;
   justify-content: center;
-  background-color: #8f7c14;
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);  
   padding: 10px 0 10px 0;
   font: bold 90px Open Sans;
-  color: rgba(255, 255, 255, 0.356);
-  box-shadow: 0 0 5px 1px rgba(0,0,0,0.75);
+  color: #07281b;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
 
 }
 
@@ -23,32 +24,39 @@
   justify-content: center;
   align-items: center;
   transition-duration: 300ms;
-  transition-delay: 1500ms;
+  transition-delay: 500ms;
   opacity: 0;
   transform: translateY(-100%);
   filter: blur(5px);
   z-index: -1;
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);  
+    margin: 20px  1px 0px 1px;
+  color: #07281b;
+  border-radius: 20px 20px 20px 20px;
 }
 
 .PlayBoard-ScoreBoard div {
-  margin: 0 1px 0px 1px;
-  color: rgba(0, 0, 0, 0.445);
+  margin: 0px  1px 0px 1px;
+  color: #07281b;
   font: bold 50px Open Sans;
   display: flex;
-  background-color: #8f7c14;
   height: 100px;
   width: 200px;
-  border-bottom-left-radius: 00px;
-  border-bottom-right-radius: 400px;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 5px 1px rgba(0,0,0,0.75);
-  clip-path: inset(0px -1px -5px 0px);
+  border-radius: 0 19px 19px 0;
+  box-shadow: 0 0 2px 1px #07281b;
+  margin: 2px;
+
+
 }
 
 .PlayBoard-ScoreBoard div:nth-child(1) {
-  border-bottom-left-radius: 400px;
-  border-bottom-right-radius: 0px;
+  border-radius: 19px 0 0 19px;
+  box-shadow: 0 0 2px 1px #07281b;
+
+
 }
 
 .PlayBoard-button-newGame {
@@ -59,14 +67,20 @@
   top: 30vh;
   transform: translateX(0px);
   transition-duration: 500ms;
+  box-shadow: 0 0 2px 1px #07281b;
+  border-radius: 20px !important;
 }
 
+
+
 .PlayBoard-button-newGame-button {
-  background-color: rgba(156, 133, 1, 0.89) !important;
-  font-size: 20px !important;
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important;  
+  font: bold 20px Open Sans !important;
   padding: 20px !important;
   border-radius: 20px !important;
-  color: rgba(255, 255, 255, 0.356) !important;
+  color: #07281b !important;
+
 }
 
 
@@ -77,6 +91,9 @@
   flex-direction: column;
   position: relative;
   margin-top: 0vh;
+  background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);  
+    border-radius: 20px;
 }
 
 .PlayBoard-row {
@@ -87,22 +104,14 @@
 
 .PlayBoard-tile {
   height: 180px;
-  background-color: rgba(156, 133, 1, 0.89);
   margin: 2px;
   transition-duration: 300ms;
-  box-shadow: 0px 0px 2px black;
   box-shadow: inset 0px 0px 0px rgb(0, 0, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  box-shadow: 0 0 2px 1px rgba(0,0,0,0.75);
-
+  box-shadow: 0 0 2px 1px #07281b;
 }
 
 .PlayBoard-tile:hover {
-  background-color: rgba(168, 154, 74, 0.89);
+  background-color: rgba(255, 255, 255, 0.219);
   cursor: pointer;
   transition-duration: 300ms;
   box-shadow: 0 0 2px 1px rgba(0,0,0,0.75);
@@ -111,42 +120,18 @@
 
 .PlayBoard-row:nth-child(1) .PlayBoard-tile:nth-child(1) {
   border-radius: 10% 0 0 0;
-  transition-delay: 600ms;
 }
 
-.PlayBoard-row:nth-child(1) .PlayBoard-tile:nth-child(2) {
-  transition-delay: 300ms;
-}
 
 .PlayBoard-row:nth-child(1) .PlayBoard-tile:nth-child(3) {
   border-radius: 0 10% 0 0;
-  transition-delay: 600ms;
-
-}
-
-.PlayBoard-row:nth-child(2) .PlayBoard-tile:nth-child(1) {
-  transition-delay: 900ms;
-}
-
-.PlayBoard-row:nth-child(2) .PlayBoard-tile:nth-child(2) {
-  transition-delay: 1200ms;
-}
-
-.PlayBoard-row:nth-child(2) .PlayBoard-tile:nth-child(3) {
-  transition-delay: 900ms;
 }
 
 .PlayBoard-row:nth-child(3) .PlayBoard-tile:nth-child(1) {
-  transition-delay: 600ms;
   border-radius: 0 0 0 10%;
 }
 
-.PlayBoard-row:nth-child(3) .PlayBoard-tile:nth-child(2) {
-  transition-delay: 300ms;
-}
-
 .PlayBoard-row:nth-child(3) .PlayBoard-tile:nth-child(3) {
-  transition-delay: 600ms;
   border-radius: 0 0 10% 0;
 }
 
@@ -203,17 +188,12 @@
   width: 180px;
 }
 
-.Cross {
+.Cross, .Circle {
   pointer-events:none;
-    color: rgba(0, 0, 0, 0.301);
+    color: #07281b;
 }
 
-.Circle {
-  pointer-events:none;
-    color: rgba(255, 255, 255, 0.301);
 
-
-}
 
 .Circle::before {
   content: "o";
@@ -322,43 +302,30 @@
   transition-duration: 500ms;
   margin-top: 20px;
     bottom: 0;
-
 }
 
 .PlayBoard-winning-button {
-  background-color: rgba(156, 133, 1, 0.89) !important;
-  font-size: 20px !important;
-  padding: 10px 20px 10px 20px !important;
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+                radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%) !important;  
+  font: bold 20px Open Sans !important;
+  padding: 20px !important;
   border-radius: 20px !important;
-  color: rgba(255, 255, 255, 0.356) !important;
-
-
+  color: #07281b !important;
 }
-
 
 .pointerNone {
   pointer-events:none;
 }
 
-
 .showScoreBoard {
   transition-duration: 500ms;
-    opacity: 1;
+  opacity: 1;
   transform: translateY(0);
-    filter: blur(0);
+  filter: blur(0);
 }
 
 .winnerTile {
   color: rgba(151, 28, 28, 0.623);
   transition-delay: 1000ms;
-  box-shadow: 0 0 5px  red;
+  box-shadow: 0 0 2px 1px  rgba(151, 28, 28, 0.623);
 }
-
-/* .xWinner {
-  color: rgba(255, 255, 255, 0.301) !important;
-}
-
-.oWinner {
-  color: rgba(0, 0, 0, 0.301) !important;
-}
- */
