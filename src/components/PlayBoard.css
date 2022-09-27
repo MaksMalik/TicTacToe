@@ -15,9 +15,8 @@
   padding: 10px 0 10px 0;
   font: bold 90px Open Sans;
   color: #07281b;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.979);
   text-shadow: 2px 2px rgba(255, 255, 255, 0.185);
-
 }
 
 .PlayBoard-ScoreBoard {
@@ -30,33 +29,31 @@
   transform: translateY(-100%);
   filter: blur(5px);
   z-index: -1;
-  background-color: rgba(0, 0, 0, 0.219);
-  margin: 0 1px 0px 1px;
-  color: #07281b;
-  border-radius: 0px 0px 20px 20px;
-  text-shadow: 1px 1px rgb(0, 0, 0);
-
+  background-color: rgba(0, 0, 0, 0.301);
+  margin: 20px 1px 0px 1px;
+  border-radius: 20px 20px 20px 20px;
+  top: -4px;
 }
 
 .PlayBoard-ScoreBoard div {
   margin: 0px  1px 0px 1px;
-  color: rgb(110, 98, 26);
+  color: #07281b;
   font: bold 55px Open Sans;
   display: flex;
   height: 100px;
   width: 180px;
   justify-content: center;
   align-items: center;
-  border-radius: 0 0px 9px 0;
-  box-shadow: 0 0 2px 1px #07281b;
-  margin: 2px;
-
+  border-radius: 0 20px 20px 0;
+  box-shadow: 0 0 2px 1px #0d422d;
+  text-shadow: 1px 1px #0d422d, -1px -1px #0d422d ;
+  margin: 4px;
 
 }
 
 .PlayBoard-ScoreBoard div:nth-child(1) {
-  border-radius: 0px 0 0 19px;
-  box-shadow: 0 0 2px 1px #07281b;
+  border-radius: 20px 0px 0 20px;
+  box-shadow: 0 0 2px 1px #0d422d;
 
 
 }
@@ -214,34 +211,35 @@
   width: 180px;
 }
 
-div.X:hover::before  {
+@media (hover: hover) {
+  div.X:hover::before  {
     content: "x";
-  display: block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font: bold 120px Open Sans;
-  position: relative;
-  color: rgba(0, 0, 0, 0.123);
-  height: 180px;
-  width: 180px;
-  top: -10px;
-}
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 120px Open Sans;
+    position: relative;
+    color: rgba(0, 0, 0, 0.123);
+    height: 180px;
+    width: 180px;
+    top: -10px;
+  }
 
-div.O:hover::before  {
+  div.O:hover::before  {
     content: "o";
-  display: block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font: bold 120px Open Sans;
-  position: relative;
-  color: rgba(0, 0, 0, 0.123);
-  height: 180px;
-  width: 180px;
-  top: -10px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: bold 120px Open Sans;
+    position: relative;
+    color: rgba(0, 0, 0, 0.123);
+    height: 180px;
+    width: 180px;
+    top: -10px;
+  }
 }
-
 
 
 
